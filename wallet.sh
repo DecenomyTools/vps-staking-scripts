@@ -36,6 +36,14 @@ read -s PASS; $wallet walletpassphrase "$PASS" 5; $wallet sendtoaddress $ADDRESS
 PASS=""
 }
 
+set_split_threshold()
+{
+AMOUNT=$1
+echo -n "Enter password: "
+read -s PASS; $wallet walletpassphrase "$PASS" 5; $wallet setstakesplitthreshold $AMOUNT
+PASS=""
+}
+
 stake()
 {
 echo -n "Enter password: "
